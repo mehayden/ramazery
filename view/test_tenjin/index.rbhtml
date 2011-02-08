@@ -1,0 +1,5 @@
+<p>Level one content</p>
+<?rb import :level2_a ?>
+<p>More level one content</p>
+<?rb import :level2_b ?>
+<p>Level one with instance variable: #{@inst_var_one}</p>

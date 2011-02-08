@@ -1,0 +1,16 @@
+h1. Ramazery
+
+This is a collection of prototypes, helpers and extensions for the excellent Ramaze web framework. The features here have been developed using the Ramaze 2011.01.30 gem.
+
+h1. Features
+
+# Enhanced Tenjin Template Adapter
+
+h2. Enhanced Tenjin Template Adapter
+
+The currently shipped adapter for Tenjin does not support the features provided by the Tenjin::ContextHelper module including the use of nested templates.
+This is because it uses the current action.binding and renders with code pulled from the Tenjin base.
+
+The enhanced adapter uses a Tenjin::Engine hooked to a Tenjin::Context which is extended with the action instance variables and helpers. It uses the standard Tenjin render function which makes use of these objects.
+
+Controller traits of :tenjin_options (Hash) and :tenjin_helpers (Array of Symbols) can be used to customize the behavior of the adapter. See Tenjin::Template #options and #extend_with_helpers for details.

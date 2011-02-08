@@ -1,0 +1,3 @@
+<p class="L2">Level two A content</p>
+<?rb import :level3 ?>
+<p class="L2">Level two A with instance variable: #{@inst_var_two}</p>
