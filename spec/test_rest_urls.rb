@@ -4,6 +4,9 @@ require 'ramaze/spec/bacon'
 
 require __DIR__('../app')
 
+# See microformats.org/wiki/rest/urls for an explanation of the
+# URL formats tested here
+
 describe TestRestPeachesController do
   behaves_like :rack_test
 
