@@ -5,6 +5,7 @@ This is a collection of prototypes, helpers and extensions for the excellent Ram
 h1. Features
 
 # Enhanced Tenjin Template Adapter
+# Lambda Router for REST URL Patterns
 
 h2. Enhanced Tenjin Template Adapter
 
@@ -14,3 +15,13 @@ This is because it uses the current action.binding and renders with code pulled 
 The enhanced adapter uses a Tenjin::Engine hooked to a Tenjin::Context which is extended with the action instance variables and helpers. It uses the standard Tenjin render function which makes use of these objects.
 
 Controller traits of :tenjin_options (Hash) and :tenjin_helpers (Array of Symbols) can be used to customize the behavior of the adapter. See Tenjin::Template #options and #extend_with_helpers for details.
+
+h2. Lambda Router for REST URL Patterns
+
+The REST URL router accepts most of the URL patterns described at http://microformats.org/wiki/rest/urls. This includes the both the native HTTP methods (PUT, DELETE) and the simulated methods using the URL "_method" parameter. The router output is of the form:
+
+bc. <RestPrefix>/<Collection>/<Action>
+	Or
+<RestPrefix>/<Collection>/<Action>/<Id>
+
+See "controller/init.rb" and "controller/test_rest_urls.rb" to see a test example for usage. A spec is provided to test the patterns. Currently the "follow a relationship" patterns are not supported.
